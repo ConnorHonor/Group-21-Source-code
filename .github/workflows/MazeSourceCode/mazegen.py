@@ -10,7 +10,8 @@ from mazelib.solve import BacktrackingSolver, Chain, Collision, Dijkstra, MazeSo
 # Testing with Sidewinder maze building alg and Tremaux solving alg
 ######################################################################
 # To install mazelib enter "pip install mazelib" into terminal.
-
+genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
+solveAlgorithms = [BacktrackingSolver, Chain, Collision, Dijkstra, MazeSolveAlgo, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 m = Maze()
 m.generator = Sidewinder(15,15)
 # m.generate_entrances()

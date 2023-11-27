@@ -28,4 +28,5 @@ for solveAlgo in solveAlgorithms:
     print(m)
     # showPNG(m.grid)
     solutionLength = len(m.solutions[0]) # Get length of solution for current solve
+    # Time in nanoseconds to solve maze, length of solution
     print((solveTime - timeStart, solutionLength))

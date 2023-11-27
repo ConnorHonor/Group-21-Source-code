@@ -56,6 +56,7 @@ class Maze:
             end_outer (bool): Do you want the end of the maze to be on an outer wall?
         Returns: None
         """
+        print("test")
         if start_outer and end_outer:
             self._generate_outer_entrances()
         elif not start_outer and not end_outer:

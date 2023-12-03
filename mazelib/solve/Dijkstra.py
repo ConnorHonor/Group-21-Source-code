@@ -5,6 +5,7 @@ from cython import compiled
 
 if not compiled:
     from mazelib.solve.MazeSolveAlgo import MazeSolveAlgo
+import heapq as hq
 class Dijkstra(MazeSolveAlgo):
     """The Algorithm:
     1. Mark all nodes unvisited and create univisited set
@@ -16,5 +17,22 @@ class Dijkstra(MazeSolveAlgo):
     5. If goal node has been marked visited or if the smallest tentative distance among unvisited nodes is infinity (if theres no path), then stop 
     6. Otherwise select the smallest distance unvisited node and set it as current and go to step 3.   
     """
-    def solve(self, grid, start, end):
-        return
+    def __init__(self):
+        self.visited_cells = set()
+    def _solve(self):
+        current = self.start
+        solution = []
+        solution.append(current)
+        tdists = {}
+        tdists[current] = 0
+        self.visited_cells.add(current)
+
+
+
+
+
+
+
+
+
+        return solution

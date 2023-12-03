@@ -16,7 +16,7 @@ genAlgorithms = [Collision, BacktrackingGenerator, BinaryTree, CellularAutomaton
 solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 m = Maze()
-m.generator = BinaryTree.BinaryTree(20,20)
+m.generator = Prims.Prims(20,20)
 m.generate()
 m.generate_entrances()
 for solveAlgo in solveAlgorithms:

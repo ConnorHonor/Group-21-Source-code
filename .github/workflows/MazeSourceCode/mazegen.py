@@ -13,7 +13,7 @@ import time
 # To install mazelib enter "pip install mazelib" into terminal.
 
 genAlgorithms = [Collision, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
-solveAlgorithms = [BacktrackingSolver, Chain, Collision, MazeSolveAlgo, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
+solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 for solveAlgo in solveAlgorithms:
     m = Maze()

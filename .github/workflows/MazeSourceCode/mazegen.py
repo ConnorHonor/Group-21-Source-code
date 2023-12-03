@@ -15,18 +15,18 @@ import time
 genAlgorithms = [Collision, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
 solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
+m = Maze()
+m.generator = BinaryTree.BinaryTree(20,20)
+m.generate()
+m.generate_entrances()
 for solveAlgo in solveAlgorithms:
-    m = Maze()
-    m.generator = Sidewinder.Sidewinder(15,15)
-    m.generate()
-    m.generate_entrances()
     solveName = solveAlgo.__name__.split('.')[2]
     m.solver = getattr(solveAlgo, solveName)()
     timeStart = time.time_ns()
     m.solve()
     solveTime = time.time_ns()
-    print(m)
-    # showPNG(m.grid)
     solutionLength = len(m.solutions[0]) # Get length of solution for current solve
+    print(m)
     # Time in nanoseconds to solve maze, length of solution
-    print((solveTime - timeStart, solutionLength))
+    print(solveName, solveTime - timeStart, solutionLength)
+showPNG(m.grid)

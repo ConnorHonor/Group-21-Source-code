@@ -12,7 +12,7 @@ import time
 ######################################################################
 # To install mazelib enter "pip install mazelib" into terminal.
 
-genAlgorithms = [Collision, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
+genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
 solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 m = Maze()
@@ -26,7 +26,6 @@ for solveAlgo in solveAlgorithms:
     m.solve()
     solveTime = time.time_ns()
     solutionLength = len(m.solutions[0]) # Get length of solution for current solve
-    print(m)
     # Time in nanoseconds to solve maze, length of solution
     print(solveName, solveTime - timeStart, solutionLength)
-showPNG(m.grid)
+# showPNG(m.grid)

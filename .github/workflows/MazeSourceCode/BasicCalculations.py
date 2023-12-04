@@ -16,7 +16,7 @@ genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutoma
 solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 m = Maze()
-m.generator = Prims.Prims(20,20)
+m.generator = Division.Division(15,15)
 m.generate()
 m.generate_entrances()
 for solveAlgo in solveAlgorithms:
@@ -27,5 +27,6 @@ for solveAlgo in solveAlgorithms:
     solveTime = time.time_ns()
     solutionLength = len(m.solutions[0]) # Get length of solution for current solve
     # Time in nanoseconds to solve maze, length of solution
+    print(m)
     print(solveName, solveTime - timeStart, solutionLength)
 # showPNG(m.grid)

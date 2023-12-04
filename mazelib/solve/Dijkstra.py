@@ -18,7 +18,7 @@ class Dijkstra(MazeSolveAlgo):
     6. Otherwise select the smallest distance unvisited node and set it as current and go to step 3.   
     """
     def __init__(self):
-        self.visited_cells = set()
+        self.unvisited_cells = set()
     def _solve(self):
         current = self.start
         solution = []

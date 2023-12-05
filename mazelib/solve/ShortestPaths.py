@@ -18,7 +18,7 @@ class ShortestPaths(MazeSolveAlgo):
     """
 
     def _solve(self):
-        """bredth-first search solutions to the maze
+        """braedth-first search solutions to the maze
 
         Returns:
             list: valid maze solutions

@@ -13,10 +13,10 @@ import time
 # To install mazelib enter "pip install mazelib" into terminal.
 
 genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze]
-solveAlgorithms = [BacktrackingSolver, Chain, Collision, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
+solveAlgorithms = [BacktrackingSolver, Chain, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 m = Maze()
-m.generator = Division.Division(15,15)
+m.generator = DungeonRooms.DungeonRooms(15,15)
 m.generate()
 m.generate_entrances()
 for solveAlgo in solveAlgorithms:

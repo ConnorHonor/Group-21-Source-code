@@ -1,4 +1,4 @@
-You will find the code bvy our group in the .github folder and in there is the python file "AverageCalculations that will collect the average solve time, printing after each solve and the final averages once done, and another file "BasicCalculations" that will just solve a maze using the algorithms and print their solution with the type of algorithm used, length of the solution, and the time to solve in seconds printed afterwards.
+You will find the code by our group in the .github folder and in there is the python file "AverageCalculations that will collect the average solve time, printing after each solve and the final averages once done, and another file "BasicCalculations" that will just solve a maze using the algorithms and print their solution with the type of algorithm used, length of the solution, and the time to solve in seconds printed afterwards.
 
 In the "AverageCalculations" there is also a link to the google sheet we used to make representations of the maze 
 

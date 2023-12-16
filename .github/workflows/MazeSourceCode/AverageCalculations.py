@@ -7,7 +7,7 @@ from mazelib.solve import BacktrackingSolver, Chain, Collision, MazeSolveAlgo, R
 import time
 # This code solves mazes using every generation and solving algorithm, collecting the time it took to solve using each solving method.
 # Prints once its done solving a maze
-# Link to google sheets with maze representation maker and the average time graph
+# Link to google sheets with maze representation maker and the average time graph. Paste the printed graph into the first sheet and see the graph in the second sheet.
 # https://1drv.ms/x/s!AiSBEN1snTvR1yJz3jfkzML69t1k?e=waQVAX
 ######################################################################
 # To install mazelib enter "pip install mazelib" into terminal.

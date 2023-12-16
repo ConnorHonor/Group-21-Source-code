@@ -3,28 +3,27 @@
 from display import showPNG
 from mazelib.mazelib import Maze
 from mazelib.generate import AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder, TrivialMaze
-from mazelib.solve import BacktrackingSolver, Chain, Collision, Dijkstra, MazeSolveAlgo, RandomMouse, ShortestPath, ShortestPaths, Tremaux
+from mazelib.solve import BacktrackingSolver, Chain, Collision, MazeSolveAlgo, RandomMouse, ShortestPath, ShortestPaths, Tremaux
 import time
-# This code is supposed to pick from the maze generators at random, solve them using specified algorithm, and save the length of the solutions
-# and possibly the runtime it took to get the solution. 
-# Testing with Sidewinder maze building alg and Tremaux solving alg
+# This code solves mazes using every generation and solving algorithm, collecting the time it took to solve using each solving method.
+# Prints once its done solving a maze
+
 ######################################################################
 # To install mazelib enter "pip install mazelib" into terminal.
 
-genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder] #Dont want trivial maze, solved instantly 
+genAlgorithms = [AldousBroder, BacktrackingGenerator, BinaryTree, CellularAutomaton, Division, DungeonRooms, Ellers, GrowingTree, HuntAndKill, Kruskal, Prims, Sidewinder]
 solveAlgorithms = [BacktrackingSolver, Chain, RandomMouse, ShortestPath, ShortestPaths, Tremaux]
 # solveAlgorithms.append(Dijkstra)
 solveTimes = {}
-# For every generating algorithm
 for genAlg in genAlgorithms:
     for i in range(5):
         # Create a unique maze using the algorithm
         m = Maze()
         genName = genAlg.__name__.split('.')[2]
-        m.generator = getattr(genAlg, genName)(25,25)
+        # Can change size of maze currently set to 15 by 15 hallways
+        m.generator = getattr(genAlg, genName)(15,15)
         m.generate()
         m.generate_entrances()
-        # For every solving algorithm
         for solveAlgo in solveAlgorithms:
             solveName = solveAlgo.__name__.split('.')[2]
             if(i == 0):
@@ -40,6 +39,7 @@ for genAlg in genAlgorithms:
             # Time in seconds to solve maze, length of solution
             solvingTime = solveTime-timeStart
             solveTimes[solveName].append(solvingTime)
+            # Output every finished solution so you know where its at in the list
             print(genName, solveName, solveTime - timeStart, solutionLength)
 
 for solveAlg in solveTimes.keys():
@@ -50,5 +50,4 @@ for solveAlg in solveTimes.keys():
         total+=timeInSeconds
     average = total/items
     print(solveAlg, average)
-            #print(genName, solveName, solveTime - timeStart, solutionLength)
 # showPNG(m.grid)

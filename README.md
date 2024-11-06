@@ -2,9 +2,7 @@ You will find the code by our group in the .github folder and in there is the py
 
 In the "AverageCalculations" there is also a link to the google sheet we used to make representations of the maze 
 
-
-
-
+![image](Group21Poster.png)
 
 
 
